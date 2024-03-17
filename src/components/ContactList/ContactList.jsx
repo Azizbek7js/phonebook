@@ -3,16 +3,26 @@ import { Link } from 'react-router-dom';
 
 function ContactList({ contacts, setContacts }) {
 	const [searchTerm, setSearchTerm] = useState('');
+	const [nameFilter, setNameFilter] = useState('');
+	const [dateFilter, setDateFilter] = useState('');
 
 	const handleSearch = (e) => {
 		setSearchTerm(e.target.value);
 	};
 
+	const handleNameFilter = (e) => {
+		setNameFilter(e.target.value);
+	};
+
+	const handleDateFilter = (e) => {
+		setDateFilter(e.target.value);
+	};
+
 	const filteredContacts = contacts.filter((contact) => {
-		return (
-			contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-			contact.phoneNumber.includes(searchTerm)
-		);
+		const isNameMatch = contact.name.toLowerCase().includes(searchTerm.toLowerCase());
+		const isNameFilterMatch = nameFilter === '' || contact.name === nameFilter;
+		const isDateFilterMatch = dateFilter === '' || contact.createdAt === dateFilter;
+		return isNameMatch && isNameFilterMatch && isDateFilterMatch;
 	});
 
 	const handleDeleteContact = (id) => {
@@ -30,10 +40,30 @@ function ContactList({ contacts, setContacts }) {
 							<input
 								type="text"
 								className="form-control"
-								placeholder="Search Name or Number"
+								placeholder="Search"
 								value={searchTerm}
 								onChange={handleSearch}
 							/>
+						</div>
+						<div>
+							<select className="form-select" value={nameFilter} onChange={handleNameFilter}>
+								<option value="">All Names</option>
+								{contacts.map((contact) => (
+									<option key={contact.id} value={contact.name}>
+										{contact.name}
+									</option>
+								))}
+							</select>
+						</div>
+						<div>
+							<select className="form-select" value={dateFilter} onChange={handleDateFilter}>
+								<option value="">All Dates</option>
+								{contacts.map((contact) => (
+									<option key={contact.id} value={contact.createdAt}>
+										{contact.createdAt}
+									</option>
+								))}
+							</select>
 						</div>
 						<div>
 							<div className="mb-2">
