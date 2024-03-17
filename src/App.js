@@ -36,7 +36,7 @@ export const defaultContacts = [
 		name: 'Bob Brown',
 		phoneNumber: '111-222-3333',
 		createdAt: '2024-03-13',
-		isFavorite: true,
+		isFavorite: 'true',
 		note: 'Neighbor',
 	},
 	{
@@ -44,7 +44,7 @@ export const defaultContacts = [
 		name: 'Emily White',
 		phoneNumber: '444-444-4444',
 		createdAt: '2024-03-12',
-		isFavorite: false,
+		isFavorite: 'false',
 		note: 'Classmate',
 	},
 	{
@@ -52,7 +52,7 @@ export const defaultContacts = [
 		name: 'David Lee',
 		phoneNumber: '666-777-8888',
 		createdAt: '2024-03-11',
-		isFavorite: true,
+		isFavorite: 'true',
 		note: 'Business Partner',
 	},
 	{
@@ -60,7 +60,7 @@ export const defaultContacts = [
 		name: 'Sarah Davis',
 		phoneNumber: '999-999-9999',
 		createdAt: '2024-03-10',
-		isFavorite: false,
+		isFavorite: 'false',
 		note: 'Roommate',
 	},
 	{
@@ -68,7 +68,7 @@ export const defaultContacts = [
 		name: 'Michael Taylor',
 		phoneNumber: '333-222-1111',
 		createdAt: '2024-03-09',
-		isFavorite: true,
+		isFavorite: 'true',
 		note: 'Co-worker',
 	},
 	{
@@ -76,7 +76,7 @@ export const defaultContacts = [
 		name: 'Olivia Martinez',
 		phoneNumber: '123-123-1234',
 		createdAt: '2024-03-08',
-		isFavorite: false,
+		isFavorite: 'false',
 		note: 'Childhood Friend',
 	},
 	{
@@ -84,7 +84,7 @@ export const defaultContacts = [
 		name: 'James Wilson',
 		phoneNumber: '555-123-7890',
 		createdAt: '2024-03-07',
-		isFavorite: true,
+		isFavorite: 'true',
 		note: 'Gym Buddy',
 	},
 ];
